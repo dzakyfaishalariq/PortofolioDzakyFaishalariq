@@ -1,9 +1,23 @@
 <script setup lang="ts">
 import { all_certificat } from '@/data/cetification';
 import { computed, ref, type ComputedRef } from 'vue';
+import CardInfo from './atribut_certfication/CardInfo.vue';
+
+interface Certificate {
+    id: number;
+    name: string;
+    organization: string;
+    tanggal: string;
+    credential: string;
+    urlcredential: string;
+}
 
 const curentPage = ref(1);
 const itemsPerPage = ref(6);
+
+// untuk tampilan modal
+const isModalOpen = ref(false);
+const selectCertificate = ref<Certificate | null>(null)
 
 const totalPages: ComputedRef<any> = computed(() => {
     return Math.ceil(all_certificat.value.length / itemsPerPage.value);
@@ -62,6 +76,17 @@ const visiblePages = computed(() => {
     return pages
 })
 
+
+const openDetail = (cert: Certificate) => {
+    selectCertificate.value = cert;
+    isModalOpen.value = true;
+}
+
+const closeDetail = () => {
+    isModalOpen.value = false;
+    selectCertificate.value = null;
+}
+
 </script>
 <template>
     <section class="mb-section-gap">
@@ -73,7 +98,8 @@ const visiblePages = computed(() => {
         <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
             <div v-for="certificat_saya in displayedCertification" :key="certificat_saya.id">
                 <!-- Cert 1 -->
-                <div class="glass-panel ghost-border rounded-xl p-1 relative group cursor-pointer bg-surface-container">
+                <div class="glass-panel ghost-border rounded-xl p-1 relative group cursor-pointer bg-surface-container"
+                    @click="openDetail(certificat_saya)">
                     <div
                         class="bg-surface-container-high rounded-lg h-full p-6 flex flex-col justify-between transition-transform duration-300 group-hover:-translate-y-2">
                         <div>
@@ -81,7 +107,7 @@ const visiblePages = computed(() => {
                                 <span class="material-symbols-outlined text-primary">school</span>
                             </div>
                             <h3 class="font-headline-md text-headline-md text-on-surface mb-2">{{ certificat_saya.name
-                            }}</h3>
+                                }}</h3>
                             <p class="font-body-md text-body-md text-on-surface-variant mb-4">{{
                                 certificat_saya.credential }}</p>
                             <a class=" mb-2 text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md hover:bg-primary/10"
@@ -116,4 +142,6 @@ const visiblePages = computed(() => {
             </div>
         </div>
     </section>
+    <!-- card -->
+    <CardInfo :is-open="isModalOpen" :certificate="selectCertificate" @close="closeDetail" />
 </template>
