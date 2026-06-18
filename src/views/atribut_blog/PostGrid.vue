@@ -24,7 +24,7 @@
                         class="font-headline-md text-headline-md text-on-background mb-3 group-hover:text-primary transition-colors">
                         Roadmap Belajar Machine Learning
                     </h4>
-                    <p class="font-body-md text-body-md text-on-surface-variant mb-6 flex-grow">
+                    <p class="font-body-md text-body-md text-on-surface-variant mb-6 grow">
                         Rute terstruktur dari probabilitas dasar hingga transformer. Membedah kurikulum yang optimal
                         untuk transisi dari rekayasa perangkat lunak tradisional menuju kecerdasan buatan.
                     </p>
@@ -49,7 +49,7 @@
                         class="font-headline-md text-headline-md text-on-background mb-3 group-hover:text-primary transition-colors">
                         Pengalaman S2 MTI UGM
                     </h4>
-                    <p class="font-body-md text-body-md text-on-surface-variant mb-6 flex-grow">
+                    <p class="font-body-md text-body-md text-on-surface-variant mb-6 grow">
                         Refleksi kritis tentang kurikulum Magister Teknologi Informasi Universitas Gadjah Mada.
                         Menyeimbangkan antara teori komputasi tingkat lanjut dan kebutuhan industri modern.
                     </p>
@@ -74,7 +74,7 @@
                         class="font-headline-md text-headline-md text-on-background mb-3 group-hover:text-primary transition-colors">
                         Membangun Data Pipeline Resilien
                     </h4>
-                    <p class="font-body-md text-body-md text-on-surface-variant mb-6 flex-grow">
+                    <p class="font-body-md text-body-md text-on-surface-variant mb-6 grow">
                         Strategi arsitektur untuk memproses aliran data bervolume tinggi. Studi kasus optimasi
                         throughput dan latensi dalam sistem terdistribusi.
                     </p>

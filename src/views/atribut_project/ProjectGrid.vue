@@ -8,7 +8,7 @@
                     class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-60 group-hover:opacity-90 mix-blend-luminosity group-hover:mix-blend-normal"
                     data-alt="A high-tech digital visualization of a medical X-ray scan being analyzed by an artificial intelligence system. The scan is displayed on a dark, sleek computer interface with glowing cyan and neon blue overlay grids and bounding boxes highlighting structural anomalies. The aesthetic is futuristic and clinical, utilizing a deep space background palette with high-contrast, luminous medical data points. The mood is analytical and precise, reflecting advanced healthcare technology and computer vision capabilities in a modern dark-mode environment."
                     src="https://lh3.googleusercontent.com/aida-public/AB6AXuClJGuGSUzed2snaB6xVmpPUUoxgqPGMFTGO0RRXEA7Wze08etsQOo84Mmth_HqB5OlTqyYP2rnUXrIldEmfnsrUGAILk8VbTjMpcg5Icgxgpo2kj54eiUieht0vPviUnLr4avbSsrzV4GyrSmP-ruymwSU3GcyehrYCfgRllDezbwo1qnHiP5IoTg7Le5rxfVRqi0BrrZnSnpQjPOBYQtdZLmjnOd1UfgX837sfElhatrSfA8huz2J-vaZRn_V12biKokiQdSz_U0" />
-                <div class="absolute inset-0 bg-gradient-to-t from-surface-container-low/90 to-transparent"></div>
+                <div class="absolute inset-0 bg-linear-to-t from-surface-container-low/90 to-transparent"></div>
                 <!-- macOS style window controls -->
                 <div class="absolute top-4 left-4 flex gap-1.5 opacity-50">
                     <div class="w-2.5 h-2.5 rounded-full bg-error"></div>
@@ -50,7 +50,7 @@
                     class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-60 group-hover:opacity-90 mix-blend-luminosity group-hover:mix-blend-normal"
                     data-alt="A conceptual abstract representation of an agentic artificial intelligence network operating in cyberspace. The image features a complex web of glowing cyan and deep violet nodes connected by pulsing laser-like data streams against a pitch-black background. The nodes pulse with energy, suggesting autonomous communication and task execution. The overall aesthetic is cyber-intelligence and high-tech, with sharp glassmorphism elements and glowing particle effects that convey advanced logic, neural networks, and seamless data flow."
                     src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9bC0UjGIrU9BHsyNJ9M7F_tYTal-iOeJA_7mQvWtjHzI0zrus6MJYnyvxHuxVY2wh8fFTaMcm51CmSsOOMG-5gilG63_Elv6u6_5y3i65R0iQTDXo3KNTOziKnrpM7BXQVNPauR2ZMOLFXjSn7G2Pr_u9pjj7Y9TWOa8UZXGUFCGueyQEyG7Rjnp6ibHL-e5sTbXaSNSjGfwYKPK-srjhtLflxCsWUGTWa8KqkwXeJnnT0LOvv4eITC78BiLgg4q6NvV8bUAobMk" />
-                <div class="absolute inset-0 bg-gradient-to-t from-surface-container-low/90 to-transparent"></div>
+                <div class="absolute inset-0 bg-linear-to-t from-surface-container-low/90 to-transparent"></div>
                 <div class="absolute top-4 left-4 flex gap-1.5 opacity-50">
                     <div class="w-2.5 h-2.5 rounded-full bg-error"></div>
                     <div class="w-2.5 h-2.5 rounded-full bg-tertiary-container"></div>
@@ -90,7 +90,7 @@
                     class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-60 group-hover:opacity-90 mix-blend-luminosity group-hover:mix-blend-normal"
                     data-alt="A stylized, high-contrast night-time aerial view of a complex city highway interchange, viewed through the lens of an advanced AI traffic monitoring system. The moving vehicles are tracked with crisp, glowing cyan bounding boxes and trajectory lines overlaid on the dark, desaturated asphalt. The scene is illuminated by subtle streetlights that cast long, dramatic shadows, emphasizing a moody, dark-mode cyber-intelligence aesthetic. The visual focuses on edge computing and real-time computer vision processing in a futuristic urban environment."
                     src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtVBxzVaBN21BsnNtTTYsGuLqCuvc1OULT9JfJC_0GNP9X1Jpyr3yRiUQBOkqSf1I-5dJJ9Z3s7d8Z6AiMMOocsFnXauQK6ZBD_xO5XoxGqfa4jy_MV0sXnPH1ePzXZOhOFpYKjtu3U8-kjiHvxulJqlKVjKlDvmQjDVrespwNix_T5no7O6OaIh6ZKpo6fiq-GPHuX2Wh4gCQjyzQW_hXjUsdJchEPUY0RVuzedw4Wi8QNkq7fkaMBAqtq_U5DjQam0yNRPtGVvA" />
-                <div class="absolute inset-0 bg-gradient-to-t from-surface-container-low/90 to-transparent"></div>
+                <div class="absolute inset-0 bg-linear-to-t from-surface-container-low/90 to-transparent"></div>
                 <div class="absolute top-4 left-4 flex gap-1.5 opacity-50">
                     <div class="w-2.5 h-2.5 rounded-full bg-error"></div>
                     <div class="w-2.5 h-2.5 rounded-full bg-tertiary-container"></div>

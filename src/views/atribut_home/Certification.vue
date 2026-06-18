@@ -92,8 +92,8 @@ const closeDetail = () => {
     <section class="mb-section-gap">
         <div class="flex items-center gap-4 mb-12">
             <span class="material-symbols-outlined text-primary text-4xl">verified</span>
-            <h2 class="font-headline-lg text-headline-lg text-on-surface text-primary">Certifications</h2>
-            <div class="flex-grow h-px bg-gradient-to-r from-outline-variant/50 to-transparent ml-4"></div>
+            <h2 class="font-headline-lg text-headline-lg text-primary">Certifications</h2>
+            <div class="grow h-px bg-linear-to-r from-outline-variant/50 to-transparent ml-4"></div>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
             <div v-for="certificat_saya in displayedCertification" :key="certificat_saya.id">
@@ -107,7 +107,7 @@ const closeDetail = () => {
                                 <span class="material-symbols-outlined text-primary">school</span>
                             </div>
                             <h3 class="font-headline-md text-headline-md text-on-surface mb-2">{{ certificat_saya.name
-                                }}</h3>
+                            }}</h3>
                             <p class="font-body-md text-body-md text-on-surface-variant mb-4">{{
                                 certificat_saya.credential }}</p>
                             <a class=" mb-2 text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md hover:bg-primary/10"

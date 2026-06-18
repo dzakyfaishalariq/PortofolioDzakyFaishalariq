@@ -1,5 +1,5 @@
 <template>
-    <header class="mb-[80px] max-w-3xl">
+    <header class="mb-20 max-w-3xl">
         <div
             class="inline-flex items-center gap-2 px-3 py-1 border border-outline-variant rounded-full bg-surface-container-low mb-6 glass-glow">
             <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>

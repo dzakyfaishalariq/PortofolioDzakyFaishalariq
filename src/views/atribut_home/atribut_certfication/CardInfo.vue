@@ -35,7 +35,7 @@ const emit = defineEmits<{
                     <div class="w-20 h-20 bg-secondary/10 rounded-xl flex items-center justify-center shrink-0">
                         <span class="material-symbols-outlined text-secondary text-4xl">model_training</span>
                     </div>
-                    <div class="flex-grow">
+                    <div class="grow">
                         <div class="flex items-center gap-3 mb-2">
                             <h2 class="font-headline-lg text-headline-lg text-on-surface">{{ certificate?.name }}
                             </h2>
@@ -60,7 +60,7 @@ const emit = defineEmits<{
                         </div>
                         <div class="flex flex-wrap gap-4">
                             <a :href="certificate?.urlcredential" target="_blank"
-                                class="bg-gradient-to-r from-primary-container to-secondary-container text-on-primary-container px-6 py-3 rounded-lg font-bold hover:shadow-[0_0_15px_rgba(34,211,238,0.4)] transition-all font-label-md text-label-md">
+                                class=" bg-linear-to-r from-primary-container to-secondary-container text-on-primary-container px-6 py-3 rounded-lg font-bold hover:shadow-[0_0_15px_rgba(34,211,238,0.4)] transition-all font-label-md text-label-md">
                                 View Original Certificate
                             </a>
                             <button

@@ -2,8 +2,8 @@
     <section class="mb-section-gap">
         <div class="flex items-center gap-4 mb-12">
             <span class="material-symbols-outlined text-primary text-4xl">architecture</span>
-            <h2 class="font-headline-lg text-headline-lg text-on-surface text-primary">System Architectures</h2>
-            <div class="flex-grow h-px bg-gradient-to-r from-outline-variant/50 to-transparent ml-4"></div>
+            <h2 class="font-headline-lg text-headline-lg text-primary">System Architectures</h2>
+            <div class="grow h-px bg-linear-to-r from-outline-variant/50 to-transparent ml-4"></div>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
             <!-- Languages -->

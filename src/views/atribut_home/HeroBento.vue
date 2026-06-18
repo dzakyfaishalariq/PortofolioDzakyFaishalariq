@@ -49,12 +49,12 @@
         </div>
         <!-- Side Image/Visual (Spans 4 cols) -->
         <div class="col-span-12 lg:col-span-4">
-            <div class="glass-panel ghost-border rounded-xl h-full min-h-[400px] relative overflow-hidden group">
+            <div class="glass-panel ghost-border rounded-xl h-full min-h-100 relative overflow-hidden group">
                 <img alt="Abstract representation of artificial intelligence"
                     class="absolute inset-0 w-full h-full object-cover opacity-40 mix-blend-luminosity group-hover:mix-blend-normal group-hover:opacity-60 transition-all duration-700"
                     data-alt="A macro shot of a complex circuit board illuminated by striking cyan and deep blue neon lights, conveying a high-tech, artificial intelligence theme. The lighting is cinematic and moody, set against a dark background, emphasizing the intricate metallic traces and microchips. The aesthetic is futuristic and technical, perfectly aligning with a dark-mode UI style."
                     src="https://lh3.googleusercontent.com/aida-public/AB6AXuC4avfRJv9WAvu-kk_s6b7DTVsdDHLnrgU0HerJ_qy_r5v4pSSbKVZN4d5F5EydqqeazJy1sS5jmAjzA94OdlpmaeN649wBFHuM3ZRae6V1SLlQFMAlJI91C3m2vgoUNEHJN5et-88ZIqxzGHV6yLFoE_WUO_m-khDTVllBFG5znqatJ00OklXymX-fhF1RPNLeGSAGkqqDlhAOgY4D8T0WU5TtsXT0Wr3OFRj24Incc5dAhQ6rIIsgZ3ahJ-CWtbSpMJ2AAlnU0Vg">
-                <div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest to-transparent"></div>
+                <div class="absolute inset-0 bg-linear-to-t from-surface-container-lowest to-transparent"></div>
                 <div class="absolute bottom-0 left-0 p-8 w-full">
                     <div class="flex justify-between items-end">
                         <div>

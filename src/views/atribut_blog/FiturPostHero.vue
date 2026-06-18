@@ -2,7 +2,7 @@
     <section class="mb-section-gap">
         <a class="block group" href="#">
             <div class="glass-card inner-glow rounded-xl overflow-hidden flex flex-col md:flex-row gap-0">
-                <div class="w-full md:w-3/5 image-overlay-wrapper min-h-[300px] md:min-h-[400px]">
+                <div class="w-full md:w-3/5 image-overlay-wrapper min-h-75 md:min-h-100">
                     <img alt="Featured Post Image" class="w-full h-full object-cover"
                         data-alt="A highly detailed, macro shot of a complex circuit board illuminated by striking, high-contrast cyan and deep violet neon lights. The aesthetic is extremely high-tech, corporate modern, and futuristic, perfectly reflecting a sophisticated machine learning and AI engineering environment. The background is a stark, absolute black, emphasizing the intricate metallic traces and glowing components. The composition is asymmetrical, focusing on a central processor chip that seems to pulsate with artificial intelligence processing power."
                         src="https://lh3.googleusercontent.com/aida-public/AB6AXuAekaOqOKHnyVTr7z00FJDKcZgkDJkxF84jej71oXu30-QkAhrTyQTiKLw2RUXi89xYBgnzyvplp_vx34RI7yKeUBnsjLPMZ66d40banFTtguNiEjxGFXRYra0vyuJ3ITj92gt_bp0TeIU0aH6KL0G6ywr392xGrF9A5wftItlvByh9DEen9FkbJv14vxMOeOJHgy7B3rPsHpCc4_xWC4G5jFWNLMM36in5rfa9mGD2LRMjI95sWw_w-AVHu74k22vO21np9lRdlYU">
