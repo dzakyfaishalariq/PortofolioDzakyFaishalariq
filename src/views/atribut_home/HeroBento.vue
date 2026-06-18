@@ -3,9 +3,9 @@
         <!-- Main Title & Terminal (Spans 8 cols) -->
         <div class="col-span-12 lg:col-span-8 flex flex-col gap-gutter">
             <div
-                class="glass-panel ghost-border rounded-xl p-10 flex flex-col justify-center min-h-[400px] relative overflow-hidden group">
+                class="glass-panel ghost-border rounded-xl p-10 flex flex-col justify-center min-h-100 relative overflow-hidden group">
                 <div
-                    class="absolute inset-0 bg-gradient-to-br from-primary-container/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                    class="absolute inset-0 bg-linear-to-br from-primary-container/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                 </div>
                 <h2 class="font-label-md text-label-md text-primary mb-4 uppercase tracking-widest">System
                     Initialization...</h2>
