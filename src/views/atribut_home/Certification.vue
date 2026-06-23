@@ -2,6 +2,7 @@
 import { all_certificat } from '@/data/cetification';
 import { computed, ref, type ComputedRef } from 'vue';
 import CardInfo from './atribut_certfication/CardInfo.vue';
+import { generatePaginationPages } from '@/utils/paginattion.ts';
 
 interface Certificate {
     id: number;
@@ -46,36 +47,8 @@ const goToPage = (pageNumber: number) => {
 }
 
 const visiblePages = computed(() => {
-    const total = totalPages.value
-    const curent = curentPage.value
-
-    if (total <= 7) {
-        return Array.from({
-            length: total
-        }, (_, i) => i + 1)
-    }
-
-    const pages: (number | string)[] = []
-
-    pages.push(1)
-
-    if (curent <= 4) {
-        pages.push(2, 3, 4, 5)
-        pages.push("...")
-        pages.push(total)
-    } else if (curent >= total - 3) {
-        pages.push("...")
-        pages.push(total - 4, total - 3, total - 2, total - 1)
-        pages.push(total)
-    } else {
-        pages.push("...")
-        pages.push(curent - 1, curent, curent + 1)
-        pages.push("...")
-        pages.push(total)
-    }
-    return pages
+    return generatePaginationPages(curentPage.value, totalPages.value)
 })
-
 
 const openDetail = (cert: Certificate) => {
     selectCertificate.value = cert;
@@ -107,7 +80,7 @@ const closeDetail = () => {
                                 <span class="material-symbols-outlined text-primary">school</span>
                             </div>
                             <h3 class="font-headline-md text-headline-md text-on-surface mb-2">{{ certificat_saya.name
-                            }}</h3>
+                                }}</h3>
                             <p class="font-body-md text-body-md text-on-surface-variant mb-4">{{
                                 certificat_saya.credential }}</p>
                             <a class=" mb-2 text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md hover:bg-primary/10"
@@ -129,9 +102,16 @@ const closeDetail = () => {
                 </button>
                 <div class="flex items-center gap-1 px-2">
                     <template v-for="page in visiblePages" :key="page">
-                        <button v-if="typeof page == 'number'" @click="goToPage(page)"
-                            class="w-10 h-10 rounded bg-primary/10 text-primary font-label-md border border-primary/30 shadow-[0_0_10px_rgba(34,211,238,0.2)]">{{
-                                page }}</button>
+                        <button v-if="typeof page == 'number'" @click="goToPage(page)" :class="[
+                            // 1. Gaya Dasar Tombol Anda + Efek Saat Tombol Mati (Disabled)
+                            'w-10 h-10 rounded font-label-md transition-all duration-200 flex items-center justify-center disabled:opacity-40 disabled:border-transparent disabled:shadow-none disabled:cursor-default',
+
+                            // 2. Kondisi Halaman Aktif vs Halaman Tidak Aktif
+                            page === curentPage
+                                ? 'bg-primary text-white border-primary shadow-[0_0_15px_rgba(34,211,238,0.5)]'
+                                : 'bg-primary/10 text-primary border-primary/30 hover:border-primary/50 shadow-[0_0_10px_rgba(34,211,238,0.2)]'
+                        ]">{{
+                            page }}</button>
                         <span v-else class="text-on-surface-variant/50 px-2">...</span>
                     </template>
                 </div>
