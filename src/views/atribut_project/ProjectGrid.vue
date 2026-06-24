@@ -125,18 +125,18 @@ onMounted(() => {
                 <p class="font-body-md text-body-md text-on-surface-variant mb-8 flex-1">
                     {{ value.Description.substring(0, 80) + " ..." }}
                 </p>
-                <a class="mt-auto inline-flex items-center justify-between w-full border border-outline-variant/50 text-on-surface hover:text-primary hover:border-primary/50 font-label-md text-label-md px-4 py-3 rounded-lg transition-all duration-300 bg-surface/30"
-                    href="#">
+                <routerLink :to="{ name: 'project_detail', params: { id: value.id } }"
+                    class="mt-auto inline-flex items-center justify-between w-full border border-outline-variant/50 text-on-surface hover:text-primary hover:border-primary/50 font-label-md text-label-md px-4 py-3 rounded-lg transition-all duration-300 bg-surface/30">
                     <span>Lihat Detail</span>
                     <span
                         class="material-symbols-outlined text-lg transform group-hover:translate-x-1 transition-transform">arrow_forward</span>
-                </a>
+                </routerLink>
             </div>
         </article>
     </div>
     <div class="flex flex-wrap items-center justify-center gap-2 mt-8 w-full">
         <div class="glass-panel ghost-border rounded-lg flex items-center p-1">
-            <button
+            <button @click="keHalamanSebelumnya" :disabled="currentPage === 1"
                 class="w-10 h-10 flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors">
                 <span class="material-symbols-outlined">chevron_left</span>
             </button>
@@ -154,7 +154,7 @@ onMounted(() => {
                         page }}</button>
                 </template>
             </div>
-            <button class=" w-10 h-10 flex items-center justify-center text-on-surface-variant hover:text-primary
+            <button @click="keHalamanSelanjutnya" :disabled="currentPage === totalPages" class=" w-10 h-10 flex items-center justify-center text-on-surface-variant hover:text-primary
                         transition-colors">
                 <span class="material-symbols-outlined">chevron_right</span>
             </button>
