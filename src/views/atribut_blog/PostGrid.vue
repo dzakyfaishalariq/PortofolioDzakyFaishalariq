@@ -58,8 +58,7 @@ onMounted(() => {
                             {{ post?.title }}
                         </h4>
                         <p class="font-body-md text-body-md text-on-surface-variant mb-6 grow">
-                            Rute terstruktur dari probabilitas dasar hingga transformer. Membedah kurikulum yang optimal
-                            untuk transisi dari rekayasa perangkat lunak tradisional menuju kecerdasan buatan.
+                            {{ post?.excerpt }}
                         </p>
                         <div
                             class="mt-auto pt-4 border-t border-outline-variant/20 flex items-center gap-2 font-label-md text-label-md text-primary opacity-80 group-hover:opacity-100 transition-opacity">
