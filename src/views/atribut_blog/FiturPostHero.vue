@@ -1,3 +1,43 @@
+<script setup lang="ts">
+import { supabase } from '@/data/conect_supabase';
+import { computed, onMounted, ref } from 'vue';
+
+const data_blog_vew = ref<any>(null)
+const loading = ref(true)
+
+const aksesDataUtama = async () => {
+    try {
+        loading.value = true
+
+        const { data: featurPost, error: errorFeaturd } = await supabase
+            .from('blog_tabel')
+            .select(`*`)
+            .eq('id', 1)
+            .single()
+
+        if (errorFeaturd) throw errorFeaturd
+        data_blog_vew.value = featurPost
+    } catch (error: any) {
+        console.log("Gagal memuat data")
+    } finally {
+        loading.value = false
+    }
+}
+
+const publisAt = computed(() => {
+    const tanggalPublis = data_blog_vew.value?.published_at
+    if (!tanggalPublis) return '-'
+
+    return new Date(tanggalPublis).toLocaleDateString('id-ID', {
+        month: 'long',
+        year: 'numeric'
+    })
+})
+
+onMounted(() => {
+    aksesDataUtama()
+})
+</script>
 <template>
     <section class="mb-section-gap">
         <a class="block group" href="#">
@@ -15,16 +55,14 @@
                 <div class="w-full md:w-2/5 p-8 flex flex-col justify-center bg-surface-container-low/50 ">
                     <div class="flex items-center gap-2 text-on-surface-variant font-label-md text-label-md mb-4">
                         <span class="material-symbols-outlined text-[18px]">calendar_today</span>
-                        <span>Oktober 24, 2024</span>
+                        <span>{{ publisAt }}</span>
                     </div>
                     <h2
                         class="font-headline-lg text-headline-lg text-on-background mb-4 group-hover:text-primary transition-colors">
-                        Perkembangan Ekosistem LLM
+                        {{ data_blog_vew?.title }}
                     </h2>
                     <p class="font-body-md text-body-md text-on-surface-variant mb-8 line-clamp-3">
-                        Analisis mendalam mengenai arsitektur terbaru, teknik kuantisasi, dan bagaimana model bahasa
-                        besar open-source mengubah lanskap rekayasa AI komersial. Mengupas lapisan kompleksitas menuju
-                        implementasi praktis.
+                        {{ data_blog_vew?.excerpt }}
                     </p>
                     <div class="mt-auto flex items-center gap-2 font-label-md text-label-md text-primary">
                         <span>Baca Selengkapnya</span>
