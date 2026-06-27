@@ -3,12 +3,27 @@ import { computed, onMounted, ref } from 'vue';
 import { useRoute } from 'vue-router';
 import MarkdownIt from 'markdown-it'
 import { supabase } from '@/data/conect_supabase';
+import hljs from 'highlight.js'
+import 'highlight.js/styles/tokyo-night-dark.css'
 
 const data_blog_view = ref<any>(null)
 const md = new MarkdownIt({
     html: true,
     linkify: true,
-    typographer: true
+    typographer: true,
+    highlight: (str: string, lang: string): string => {
+        // Memastikan parameter lang valid dan bahasanya didukung oleh highlight.js (seperti python, js, bash/cmd)
+        if (lang && hljs.getLanguage(lang)) {
+            try {
+                return `<pre><code class="hljs language-${lang}">${hljs.highlight(str, { language: lang, ignoreIllegals: true }).value
+                    }</code></pre>`
+            } catch (e) {
+                console.error(e)
+            }
+        }
+        // Fallback jika kode berupa teks polos atau terminal/cmd yang tidak spesifik
+        return `<pre><code class="hljs">${md.utils.escapeHtml(str)}</code></pre>`
+    }
 })
 const route = useRoute()
 const paramID = Number(route.params.id as string)
@@ -166,14 +181,55 @@ onMounted(() => {
     margin-bottom: 0.25rem;
 }
 
-/* Menghidupkan bentuk Code Block */
+/* --- PERBAIKAN CODE BLOCK UNTUK HIGHLIGHT.JS --- */
 :deep(.article-content pre) {
-    background-color: #1e1e1e;
-    /* Warna gelap background code */
-    padding: 1rem;
-    border-radius: 0.5rem;
+    background-color: #1a1b26;
+    /* Menyesuaikan warna latar gelap tema Tokyo Night */
+    padding: 1.25rem;
+    border-radius: 0.75rem;
     overflow-x: auto;
     margin: 1.5rem 0;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
+}
+
+:deep(.article-content code) {
+    font-family: 'Fira Code', 'Courier New', Courier, monospace;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+/* Menghapus pewarnaan statis pada teks di dalam pre agar warna syntax highlighting menyala */
+:deep(.article-content pre code) {
+    color: inherit;
+    background: transparent;
+    padding: 0;
+}
+
+/* Gaya tambahan untuk inline-code (kode pendek di dalam kalimat paragraf, contoh: `npm run dev`) */
+:deep(.article-content :not(pre) > code) {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #ff9e64;
+    /* Warna orange kontras mencerahkan teks inline */
+    padding: 0.2rem 0.4rem;
+    border-radius: 0.25rem;
+    font-size: 0.85rem;
+}
+
+:deep(.article-content img) {
+    max-width: 100%;
+    /* Gambar tidak akan pernah keluar dari card */
+    height: auto;
+    /* Menjaga rasio foto agar tidak gepeng */
+    display: block;
+    margin: 2rem auto;
+    /* Posisi otomatis di tengah dengan jarak atas-bawah */
+    border-radius: 0.75rem;
+    /* Sudut melengkung halus agar senada dengan card */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    /* Garis tepi tipis tipuan kaca */
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+    /* Efek bayangan dalam */
 }
 
 :deep(.article-content code) {
