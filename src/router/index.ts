@@ -1,4 +1,5 @@
 import AboutView from '@/views/AboutView.vue'
+import BlogDetailView from '@/views/atribut_blog/BlogDetailView.vue'
 import DetailProjek from '@/views/atribut_project/DetailProjek.vue'
 import BlogView from '@/views/BlogView.vue'
 import HomeView from '@/views/HomeView.vue'
@@ -30,6 +31,11 @@ const route: Array<RouteRecordRaw> = [
     path: '/blog',
     name: 'blog',
     component: BlogView
+  },
+  {
+    path:'/blog/:id',
+    name: 'blog_view',
+    component: BlogDetailView
   }
 ] 
 
