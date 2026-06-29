@@ -64,11 +64,13 @@ onMounted(() => {
                     <p class="font-body-md text-body-md text-on-surface-variant mb-8 line-clamp-3">
                         {{ data_blog_vew?.excerpt }}
                     </p>
-                    <div class="mt-auto flex items-center gap-2 font-label-md text-label-md text-primary">
-                        <span>Baca Selengkapnya</span>
-                        <span
-                            class="material-symbols-outlined transition-transform group-hover:translate-x-1">arrow_forward</span>
-                    </div>
+                    <router-link v-if="data_blog_vew?.id" :to="{ name: 'blog_view', params: { id: data_blog_vew.id } }">
+                        <div class="mt-auto flex items-center gap-2 font-label-md text-label-md text-primary">
+                            <span>Baca Selengkapnya</span>
+                            <span
+                                class="material-symbols-outlined transition-transform group-hover:translate-x-1">arrow_forward</span>
+                        </div>
+                    </router-link>
                 </div>
             </div>
         </a>
