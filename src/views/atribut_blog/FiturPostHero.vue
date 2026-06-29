@@ -12,7 +12,7 @@ const aksesDataUtama = async () => {
         const { data: featurPost, error: errorFeaturd } = await supabase
             .from('blog_tabel')
             .select(`*`)
-            .eq('id', 1)
+            .eq('slug', 'roadmap-belajar-machine-learning-2026')
             .single()
 
         if (errorFeaturd) throw errorFeaturd
@@ -64,7 +64,8 @@ onMounted(() => {
                     <p class="font-body-md text-body-md text-on-surface-variant mb-8 line-clamp-3">
                         {{ data_blog_vew?.excerpt }}
                     </p>
-                    <router-link v-if="data_blog_vew?.id" :to="{ name: 'blog_view', params: { id: data_blog_vew.id } }">
+                    <router-link v-if="data_blog_vew?.slug"
+                        :to="{ name: 'blog_view', params: { slug: data_blog_vew.slug } }">
                         <div class="mt-auto flex items-center gap-2 font-label-md text-label-md text-primary">
                             <span>Baca Selengkapnya</span>
                             <span

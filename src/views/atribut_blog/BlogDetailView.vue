@@ -26,7 +26,7 @@ const md = new MarkdownIt({
     }
 })
 const route = useRoute()
-const paramID = Number(route.params.id as string)
+const paramSlug = String(route.params.slug)
 const loading = ref(true)
 
 const rendereMarkdwon = computed(() => {
@@ -37,19 +37,19 @@ const rendereMarkdwon = computed(() => {
 const blogViewAkses = async () => {
     try {
         loading.value = true
-        if (isNaN(paramID)) {
-            console.error("id tidak valid")
-        }
+        // if (isNaN(paramID)) {
+        //     console.error("id tidak valid")
+        // }
         const { data: viewBlog, error: viewError } = await supabase
             .from('blog_tabel')
             .select('*')
-            .eq('id', paramID)
+            .eq('slug', paramSlug)
             .single()
 
         if (viewError) throw viewError
         data_blog_view.value = viewBlog
     } catch (error: any) {
-        console.error("Gagal memuat data")
+        console.error("Gagal memuat data", error.message || error)
     } finally {
         loading.value = false
     }

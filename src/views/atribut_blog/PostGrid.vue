@@ -61,7 +61,7 @@ onMounted(() => {
                             <p class="font-body-md text-body-md text-on-surface-variant mb-6 grow">
                                 {{ post?.excerpt }}
                             </p>
-                            <router-link :to="{ name: 'blog_view', params: { id: post?.id } }"
+                            <router-link :to="{ name: 'blog_view', params: { slug: post?.slug } }"
                                 class="mt-auto pt-4 border-t border-outline-variant/20 flex items-center gap-2 font-label-md text-label-md text-primary opacity-80 group-hover:opacity-100 transition-opacity">
                                 <span>Buka Catatan</span>
                                 <span class="material-symbols-outlined text-[16px]">chevron_right</span>

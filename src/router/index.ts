@@ -33,7 +33,7 @@ const route: Array<RouteRecordRaw> = [
     component: BlogView
   },
   {
-    path:'/blog/:id',
+    path:'/blog/:slug',
     name: 'blog_view',
     component: BlogDetailView
   }
